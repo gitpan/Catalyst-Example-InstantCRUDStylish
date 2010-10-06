@@ -1,0 +1,17 @@
+---
+name: My::App
+
+View::TT:
+    WRAPPER: 'wrapper.tt'
+
+InstantCRUD:
+    model_name: DBICSchemamodel
+    schema_name: DBSchema
+    maxrows: 10
+
+Model::DBICSchemamodel:
+    connect_info:
+        dsn: "dbi:SQLite:dbname=/usr/home/evolutive/Downloads/Catalyst-Example-InstantCRUD-0.036/t/tmp/test.db"
+        user: 
+        password: 
+

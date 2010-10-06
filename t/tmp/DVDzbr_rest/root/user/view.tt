@@ -1,0 +1,75 @@
+
+<div id="main">
+<div id="content">
+<div class="box">
+
+  <h1>[% page_html.title %]</h1>
+  <div class="head">
+	<div class="roundcorner">
+		<i class="rctl"><b></b></i>
+		<i class="rctr"><b></b></i>
+	</div>
+    <a class="btn1" href="javascript:history.go(-1)">Voltar<b></b></a>
+    <a class="btn1" href="[% c.uri_for( 'list' ) %]">Listar Todos<b></b></a>
+    <a class="btn1" href="[% c.uri_for( 'edit', item.id,  ) %]">Alterar<b></b></a>
+    <a class="btn1" href="[% c.uri_for( 'list' ) %]">Listar Serviços<b></b></a>
+    [% IF (c.check_user_roles('gerente'))  %]
+      <a class="btn1" href="[% c.uri_for( 'destroy', item.id  ) %]">Excluir<b></b></a>
+    [% END %]
+		<div class="fr">
+		</div>
+	</div>
+    
+  <div class="boxcontent boxdados">
+
+<div class="dados50">
+<strong>Dvd Owners: </strong>
+    
+    [% FOR val = item.dvd_owners; val; ', '; END %]
+    
+</div>
+
+<div class="dados50">
+<strong>Dvd Current Borrowers: </strong>
+    
+    [% FOR val = item.dvd_current_borrowers; val; ', '; END %]
+    
+</div>
+
+<div class="dados50">
+<strong>Username: </strong>
+    
+    [%  item.username %]
+    
+</div>
+
+<div class="dados50">
+<strong>Password: </strong>
+    
+    [%  item.password %]
+    
+</div>
+
+<div class="dados50">
+<strong>Name: </strong>
+    
+    [%  item.name %]
+    
+</div>
+
+<div class="dados50">
+<strong>Roles: </strong>
+    
+    [% FOR val = item.roles; val; ', '; END %]
+    
+</div>
+
+  </div> 
+</div> 
+</div>
+</div>
+</div>
+[% INCLUDE 'src/sidebar.tt2' %]
+</div>
+
+

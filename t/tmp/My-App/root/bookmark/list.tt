@@ -1,0 +1,88 @@
+
+<div id="main">
+<div id="content">
+<div class="box">
+
+  <h1>[% page_html.title %]</h1>
+  <div class="head">
+		<div class="roundcorner">
+			<i class="rctl"><b></b></i>
+			<i class="rctr"><b></b></i>
+		</div>
+    <a class="btn1" href="javascript:history.go(-1)">Voltar<b></b></a>
+    <a class="btn1" href="[% c.uri_for( 'edit' ) %]">Criar Novo<b></b></a>
+    [% IF (c.check_user_roles('gerente'))  %]
+        <a class="btn1" href="javascript: void(0)" onclick="show_confirm()">Excluir Selecionados<b></b></a>
+        <script type="text/javascript">
+        function show_confirm()
+        {
+          var r=confirm("Você tem certeza que deseja efetuar esta ação?");
+          if (r==true)
+          {
+            $('#gridform').attr('action', '[% c.uri_for('destroy_multiple') %]'); document.gridform.submit();
+          }
+          else
+          {
+          }
+        }
+        </script>
+    [% END %]
+		<div class="fr">
+		</div>
+	</div>
+<table>
+<thead>
+  <tr>
+    <td class="select-cell">
+      <input type="checkbox" id="select-all-checkbox" value="Selecionar todos"></input>
+      <script>
+        $('#select-all-checkbox').click(function () { 
+          var cheked_status= this.checked;
+          $('[name=select-multiple]').each( function () {
+            this.checked = cheked_status;
+            });
+          });
+      </script>
+    </td>
+    
+    <td class="col"> [% order_by_column_link('usr', 'Usr') %] </td>
+    
+    
+    <td class="col"> [% order_by_column_link('id', 'Id') %] </td>
+    
+     
+  </tr>
+</thead>
+<form method="post" id="gridform" name="gridform">
+  <tbody>
+[% WHILE (row = result.next) %]
+    <tr>
+    <td>
+      <input name="select-multiple" type="checkbox" value="[% row.id %]"></input>
+    </td>
+    
+    <td>
+    
+    <a href="[% c.uri_for_action( '/bookmark/view', [], row.id,  ) %]">[%  row.usr %]</a>
+    
+    </td>
+    
+    <td>
+    
+    <a href="[% c.uri_for_action( '/bookmark/view', [], row.id,  ) %]">[%  row.id %]</a>
+    
+    </td>
+     
+    [% SET id = row.$pri %]
+    <td><a href="[% c.uri_for_action( '/bookmark/edit', [], row.id,  ) %]">alterar</a></td>
+    </tr>
+[% END %]
+  </tbody>
+</form>
+</table>
+[% PROCESS pager.tt %]
+</div>
+</div>
+[% INCLUDE 'src/sidebar.tt2' %]
+</div>
+
