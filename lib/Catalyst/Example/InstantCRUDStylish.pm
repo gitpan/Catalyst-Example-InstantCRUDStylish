@@ -1,6 +1,6 @@
 package Catalyst::Example::InstantCRUDStylish;
 
-$VERSION = '0.036';
+$VERSION = '0.0362';
 
 use warnings;
 use strict;
@@ -19,7 +19,7 @@ Catalyst::Example::InstantCRUDStylish - A CRUD scaffolding for Catalyst (forked 
 
 =head1 VERSION
 
-This document describes Catalyst::Example::InstantCRUDStylish version 0.036
+This document describes Catalyst::Example::InstantCRUDStylish version 0.0362
 
 =head1 SYNOPSIS
 

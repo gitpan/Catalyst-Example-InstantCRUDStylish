@@ -478,11 +478,31 @@ __view__
               <div class="span-17 borderBottomlight last">
                 <div class="quiet span-1 clear">[% item.<+ column.name +>_rs.count %]</div>
                 <div class="loud span-13 last">
-                    [% IF item.<+ column.name +>_rs.count > 0 ; FOR val = item.<+ column.name +>; val; ', '; END ; ELSE ; '-' ; END ; %]
+                  [% IF item.<+ column.name +>_rs.count > 0 ; %]
+                
+                  [% FOR val = item.<+ column.name +>; %]
+
+                      <div class="span-2 row-button clear">
+                        <a href="/[% item.<+ column.name +>_rs.result_source.source_name FILTER lower %]/destroy/[% val.id %]?height=100&width=250&keepThis=true&TB_iframe=true&callback=reload_page" alt="Remove" title="Remove" class="thickbox negative">
+                          <img title="list" alt="list" src="/static/images/iconpack/delete.png">
+                          remove
+                        </a>
+                      </div>  
+                        
+                      <div class="loud span-11 last">
+                        [% val || '-' %]
+                      </div>  
+
+                  [% END ; %]
+                    
+                  [% ELSE ; '-' ; END ; %]
+
+
                 </div>
+
                 <div class="loud span-3 last">
                     <div class="span-3 row-button">
-                      <a alt="New" title="New" class="thickbox positive" href="<+ base_pathpart +>edit_ajax?height=400&amp;width=750&amp;keepThis=true&amp;TB_iframe=true&amp;callback=reload_page">
+                      <a alt="New" title="New" class="thickbox positive" href="/[% item.<+ column.name +>_rs.result_source.source_name FILTER lower %]/edit_ajax?height=400&width=750&keepThis=true&TB_iframe=true&callback=reload_page">
                       <img title="New" alt="New" src="/static/images/iconpack/add.png">
                       New
                       </a>

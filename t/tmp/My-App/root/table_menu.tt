@@ -1,1 +1,0 @@
-| <a href="[% base %]">Home</a> | <a href="[% base %]restricted">Restricted Area </a> | <a href="[% base %]usr">Usr</a> | <a href="[% base %]composedkey">ComposedKey</a> | <a href="[% base %]bookmark">Bookmark</a> | <a href="[% base %]firsttable">Firsttable</a> | <a href="[% base %]secondtable">Secondtable</a> |
