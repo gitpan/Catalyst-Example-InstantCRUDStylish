@@ -119,16 +119,12 @@ L<http://rt.cpan.org>.
 
 =head1 AUTHOR
 
-<Hernan Lopes>  <hernanlopes@gmail.com>
-
-
-=head1 InstantCRUD ORIGINAL AUTHOR
-
 <Zbigniew Lukasiak>  C<< <<zz bb yy @ gmail.com>> >>
 
 
-=head1 InstantCRUD CONTRIBUTORS
+=head1 CONTRIBUTORS
 
+Hernan Lopes:  <hernanlopes@gmail.com>
 wreis: Wallace Reis <wallace@reis.org.br>
 
 

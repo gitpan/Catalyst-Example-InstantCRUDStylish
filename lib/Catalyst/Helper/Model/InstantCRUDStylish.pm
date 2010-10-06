@@ -154,6 +154,10 @@ This document describes Catalyst::Helper::Model::InstantCRUDStylish
 
 <Jonas Alves>  C<< <<jonas.alves @ gmail.com>> >>
 
+=head1 CONTRIBUTORS
+
+Hernan Lopes:  <hernanlopes@gmail.com>
+
 =head1 LICENCE AND COPYRIGHT
 
 Copyright (c) 2005, <Zbigniew Lukasiak> C<< <<zz bb yy @ gmail.com>> >>. All rights reserved.

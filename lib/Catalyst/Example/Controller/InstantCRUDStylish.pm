@@ -384,6 +384,10 @@ L<http://rt.cpan.org>.
 <Jonas Alves>  C<< <<jonas.alves at gmail.com>> >>
 <Lars Balker Rasmussen>
 
+=head1 CONTRIBUTORS
+
+Hernan Lopes:  <hernanlopes [ @ ] gmail.com>
+
 =head1 LICENCE AND COPYRIGHT
 
 Copyright (c) 2005, <Zbigniew Lukasiak> C<< <<zz bb yy @ gmail.com>> >>. All rights reserved.

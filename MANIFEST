@@ -18,7 +18,6 @@ lib/Catalyst/Helper/View/InstantCRUDStylish.pm
 lib/Catalyst/Helper/Model/InstantCRUDStylish.pm
 lib/Catalyst/Helper/InstantCRUDStylish.pm
 lib/Catalyst/Helper/Controller/InstantCRUDStylish.pm
-lib/Catalyst/Plugin/Auth/Utils.pm
 lib/Catalyst/Example/InstantCRUDStylish.pm
 lib/Catalyst/Example/Controller/InstantCRUDStylish.pm
 lib/Catalyst/Example/Controller/InstantCRUDStylish/REST.pm
