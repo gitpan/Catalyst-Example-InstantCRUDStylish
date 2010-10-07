@@ -237,11 +237,11 @@ sub create_example_db {
 
 =head1 NAME
 
-instantcrud.pl - Bootstrap a Catalyst application example
+instantcrudstylish.pl - Bootstrap a Catalyst application example
 
 =head1 SYNOPSIS
 
-instantcrud.pl ApplicationName [options]
+instantcrudstylish.pl ApplicationName [options]
 
  Options:
    -dsn            dsn
@@ -259,7 +259,7 @@ instantcrud.pl ApplicationName [options]
  created and used.
 
  Examples:
-    instantcrud.pl My::App -dsn='dbi:Pg:dbname=CE' -user=zby -password='pass' 
+    instantcrudstylish.pl My::App -dsn='dbi:Pg:dbname=CE' -user=zby -password='pass' 
 
 =head1 DESCRIPTION
 

@@ -15,11 +15,11 @@ create_example_db( $testfile, $sqlfile );
 
 my $tmpdir = dir(qw/ t tmp/);
 my $libdir = dir(dir()->parent->parent, 'lib');
-my $instant = file(dir()->parent->parent, 'script', 'instantcrud.pl');
+my $instant = file(dir()->parent->parent, 'script', 'instantcrudstylish.pl');
 
 my $currdir = dir()->absolute;
 chdir $tmpdir;
-my $line = "$^X -I$libdir ../../script/instantcrud.pl My::App -dsn='dbi:SQLite:dbname=$testfile' -noauth";
+my $line = "$^X -I$libdir ../../script/instantcrudstylish.pl My::App -dsn='dbi:SQLite:dbname=$testfile' -noauth";
 warn $line;
 `$line`;
 chdir $currdir;
