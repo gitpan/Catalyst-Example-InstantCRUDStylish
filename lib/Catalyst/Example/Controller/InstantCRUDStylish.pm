@@ -120,6 +120,7 @@ sub edit_ajax :Action {
     my ( $self, $c, @pks ) = @_;
     $c->stash(
         current_view => 'Ajax',
+        edit_action => 'edit_ajax',
         );
     $c->forward('edit_item', @pks);
     }
@@ -134,10 +135,14 @@ sub edit_item : Private {
         @ids,
     );
     my $item = $form->item;
-    if( $c->req->method eq 'POST' && $form->process() ){
+    if( $c->req->method eq 'POST' && $form->process() ) {
         $item = $form->item;
-        $c->res->redirect( $c->uri_for( $self->action_for('view'), $item->id ) );
-        $c->flash( message => 'Saved!' );
+        if ($c->stash->{edit_action} eq 'edit') {
+          $c->res->redirect( $c->uri_for( $self->action_for('view'), $item->id ) );
+          $c->flash( message => 'Saved!' );
+          } else {
+              $c->stash( template => \'Saved!', );
+              }
     }
     if( @pks ){
         $form->field( 'submit' )->value( 'Save' );
@@ -154,6 +159,9 @@ sub edit_item : Private {
 
 sub edit : Action {
     my ( $self, $c, @pks ) = @_; 
+    $c->stash(
+        edit_action => 'edit',
+        );
     $c->forward('edit_item', @pks);
     }
 

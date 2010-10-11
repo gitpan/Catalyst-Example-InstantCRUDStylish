@@ -19,7 +19,8 @@ my $instant = file(dir()->parent->parent, 'script', 'instantcrudstylish.pl');
 
 my $currdir = dir()->absolute;
 chdir $tmpdir;
-my $line = "$^X -I$libdir ../../script/instantcrudstylish.pl My::App -dsn='dbi:SQLite:dbname=$testfile' -noauth";
+my $line = "$^X -I$libdir $instant My::App -dsn='dbi:SQLite:dbname=$testfile' -noauth";
+#my $line = "$^X -I$libdir ../../script/instantcrudstylish.pl My::App -dsn='dbi:SQLite:dbname=$testfile' -noauth";
 warn $line;
 `$line`;
 chdir $currdir;
