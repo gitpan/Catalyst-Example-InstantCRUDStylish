@@ -285,14 +285,14 @@ __list__
   </div>
   <div class="span-20 top-options last">
     <div class="span-17 last">  
-    <a href="[% c.uri_for( 'edit') %]" title="novo" class="positive button">
+    <a href="[% c.uri_for( 'edit') %]" title="new" class="positive button">
       <img src='/static/images/iconpack/add.png' alt=''></img>
-      novo
+     New 
       </a>  
 
         <a class="button negative" href="javascript: void(0)" onclick="show_confirm()">
           <img src='/static/images/iconpack/cross.png' alt=''></img>
-          remover
+          remove
         </a>
         <script type="text/javascript">
         function show_confirm()
@@ -309,7 +309,7 @@ __list__
         </script>
     </div>
     <div class="span-3 last">  
-       <input type="checkbox" id="select-all-checkbox" value="Todos"></input> Todos
+       <input type="checkbox" id="select-all-checkbox" value="All"></input> All
        <script>
          $('#select-all-checkbox').click(function () { 
            var cheked_status= this.checked;
@@ -378,13 +378,13 @@ __list__
             <div class='span-3 last'>
 
               <div class='span-3 row-button'>
-                <input name="select-multiple" type="checkbox" value="[% row.id %]"></input> Select
+                <input name="select-multiple" type="checkbox" value="[% <+ FOR key = primary_keys +>row.<+ key +><+END+> %]"></input> Select
               </div>
 
               <div class='span-3 row-button'>
                 <a class="positive" href="[% c.uri_for_action( '<+ base_pathpart +><+ IF rest +>by_id'<+ ELSE +>view'<+ END +>, [], <+ FOR key = primary_keys +>row.<+ key +>, <+ END +> ) %]">
                   <img src='/static/images/iconpack/application_go.png' alt=''></img>
-                  abrir 
+                  view 
                 </a>
               </div>
 
@@ -428,15 +428,15 @@ __view__
   <div class="span-20 top-options last">
     <a class="button positive" href="[% c.uri_for( 'list' ) %]">
       <img src='/static/images/iconpack/application_view_list.png' alt='list' title="list"></img>
-      listar
+      list
     </a>
-    <a class="button" href="[% c.uri_for( 'edit', item.id,  ) %]">
+    <a class="button" href="[% c.uri_for( 'edit', <+ FOR key = primary_keys +>item.<+ key +><+END+>,  ) %]">
       <img src='/static/images/iconpack/application_edit.png' alt='edit' title="edit"></img>
-      edit
+      editt
     </a>
-      <a class="thickbox negative button" href="[% c.uri_for( 'destroy', item.id , { height => 100, width => 400 }  ) %]">
+      <a class="thickbox negative button" href="[% c.uri_for( 'destroy', <+ FOR key = primary_keys +>item.<+ key +><+END+> , { height => 100, width => 400 }  ) %]">
         <img src='/static/images/iconpack/delete.png' alt='delete' title="delete"></img>
-        remover
+        remove
       </a>
     
     <div class="span-20 last">
@@ -483,7 +483,7 @@ __view__
                   [% FOR val = item.<+ column.name +>; %]
 
                       <div class="span-2 row-button clear">
-                        <a href="/[% item.<+ column.name +>_rs.result_source.source_name FILTER lower %]/destroy/[% val.id %]?height=100&width=250&keepThis=true&TB_iframe=true&callback=reload_page" alt="Remove" title="Remove" class="thickbox negative">
+                        <a href="/[% item.<+ column.name +>_rs.result_source.source_name FILTER lower %]/destroy/[% <+ FOR key = primary_keys +>val.<+ key +><+END+> %]?height=100&width=250&keepThis=true&TB_iframe=true&callback=reload_page" alt="Remove" title="Remove" class="thickbox negative">
                           <img title="list" alt="list" src="/static/images/iconpack/delete.png">
                           remove
                         </a>
@@ -544,7 +544,7 @@ __edit__
   <div class="span-20 top-options last">
     <a class="button" href="[% c.uri_for( 'list' ) %]">
       <img src='/static/images/iconpack/application_view_list.png' alt='list' title="list"></img>
-      listar
+      list
     </a>
 
     <div class="span-20 last">
@@ -639,8 +639,8 @@ __pager__
 <center>
     <div class="pagination-space">
       <div class="span-6 height35 paddingTop5 paddingBottom5">
-      Páginas:
-[%#        Página pager.current_page de pager.last_page %]
+      Pages:
+[%#        Page pager.current_page of pager.last_page %]
 
        [%  
            start = (pager.current_page - 3) > 0               ? (pager.current_page - 3) : 1;
@@ -656,13 +656,13 @@ __pager__
       </div>
       <div class="span-8 last height35 paddingTop5 paddingBottom5">
        [% IF pager.previous_page %]
-           <a href="[% c.req.uri_with( page => pager.first_page ) %]" class="noborder">&laquo; Primeira</a>
-           <a href="[% c.req.uri_with( page => pager.previous_page ) %]" class="noborder">&lt; Anterior </a>
+           <a href="[% c.req.uri_with( page => pager.first_page ) %]" class="noborder">&laquo; First</a>
+           <a href="[% c.req.uri_with( page => pager.previous_page ) %]" class="noborder">&lt; Before </a>
        [% END %]
         |
        [% IF pager.next_page %]
-           <a href="[% c.req.uri_with( page => pager.next_page ) %]" class="noborder">Próxima &gt; </a>
-           <a href="[% c.req.uri_with( page => pager.last_page ) %]" class="noborder">Última &raquo; </a>
+           <a href="[% c.req.uri_with( page => pager.next_page ) %]" class="noborder">After &gt; </a>
+           <a href="[% c.req.uri_with( page => pager.last_page ) %]" class="noborder">Last &raquo; </a>
        [% END %]
       </div>
    </div>
@@ -670,7 +670,7 @@ __pager__
 [% END %]
 
 __restricted__
-Você deve fazer login para acessar esta área.
+Make login to acess this restricted area.
 __home__
 [% TAGS <+ +> %]
 

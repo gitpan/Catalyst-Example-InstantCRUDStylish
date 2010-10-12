@@ -1,6 +1,9 @@
 Revision history for Catalyst-Example-InstantCRUD
 
 0.0364 Thu Oct 7, 2010
+    -added more testing.
+
+0.0364 Thu Oct 7, 2010
     -fixed tests, sorry they were failing.
 
 0.0362 Wed Oct 6, 2010 
