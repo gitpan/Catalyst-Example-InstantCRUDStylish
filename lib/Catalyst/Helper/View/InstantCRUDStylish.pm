@@ -430,11 +430,11 @@ __view__
       <img src='/static/images/iconpack/application_view_list.png' alt='list' title="list"></img>
       list
     </a>
-    <a class="button" href="[% c.uri_for( 'edit', <+ FOR key = primary_keys +>item.<+ key +><+END+>,  ) %]">
+    <a class="button" href="[% c.uri_for( 'edit', <+ FOR key = primary_keys +> item.<+ key +>, <+END+>,  ) %]">
       <img src='/static/images/iconpack/application_edit.png' alt='edit' title="edit"></img>
-      editt
+      edit
     </a>
-      <a class="thickbox negative button" href="[% c.uri_for( 'destroy', <+ FOR key = primary_keys +>item.<+ key +><+END+> , { height => 100, width => 400 }  ) %]">
+      <a class="thickbox negative button" href="[% c.uri_for( 'destroy', <+ FOR key = primary_keys +>item.<+ key +>,<+END+> , { height => 100, width => 400 }  ) %]">
         <img src='/static/images/iconpack/delete.png' alt='delete' title="delete"></img>
         remove
       </a>

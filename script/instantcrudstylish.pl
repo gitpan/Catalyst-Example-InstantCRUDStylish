@@ -129,7 +129,8 @@ make_schema_at(
 
 my $schema = $full_schema_name->connect(); #$dsn, $duser, $dpassword);
 
-my ( $m2m, $bridges ) = guess_m2m( $schema );
+my ( $m2m, $bridges );
+#my ( $m2m, $bridges ) = guess_m2m( $schema ); #here is something wrong. TODO fix
 for my $result_class ( $schema->sources ){ 
     my $result_source = $schema->source( $result_class );
     my $overload_method = first { $_ =~ /name/i } $result_source->columns;
