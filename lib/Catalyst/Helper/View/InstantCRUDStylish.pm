@@ -657,11 +657,11 @@ __pager__
       <div class="span-8 last height35 paddingTop5 paddingBottom5">
        [% IF pager.previous_page %]
            <a href="[% c.req.uri_with( page => pager.first_page ) %]" class="noborder">&laquo; First</a>
-           <a href="[% c.req.uri_with( page => pager.previous_page ) %]" class="noborder">&lt; Before </a>
+           <a href="[% c.req.uri_with( page => pager.previous_page ) %]" class="noborder">&lt; Previous </a>
        [% END %]
         |
        [% IF pager.next_page %]
-           <a href="[% c.req.uri_with( page => pager.next_page ) %]" class="noborder">After &gt; </a>
+           <a href="[% c.req.uri_with( page => pager.next_page ) %]" class="noborder">Next &gt; </a>
            <a href="[% c.req.uri_with( page => pager.last_page ) %]" class="noborder">Last &raquo; </a>
        [% END %]
       </div>

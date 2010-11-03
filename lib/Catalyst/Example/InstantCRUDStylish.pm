@@ -1,6 +1,6 @@
 package Catalyst::Example::InstantCRUDStylish;
 
-$VERSION = '0.0367';
+$VERSION = '0.0368';
 
 use warnings;
 use strict;
@@ -15,17 +15,18 @@ __END__
 
 =head1 NAME
 
-Catalyst::Example::InstantCRUDStylish - A CRUD scaffolding for Catalyst (forked from Catalyst::Example::InstantCRUD) with some css style.
+Catalyst::Example::InstantCRUDStylish - A CRUD scaffolding for Catalyst 
+*** (forked from Catalyst::Example::InstantCRUD) with some css style.
 
 =head1 VERSION
 
-This document describes Catalyst::Example::InstantCRUDStylish version 0.0367
+This document describes Catalyst::Example::InstantCRUDStylish version 0.0368
 
 =head1 SYNOPSIS
 
-    instantcrud.pl My::App -dsn='dbi:Pg:dbname=CE' -user=zby -password='pass'
+    instantcrudstylish.pl My::App -dsn='dbi:Pg:dbname=CE' -user=zby -password='pass'
 
-The L<instantcrud.pl> executable creates a skeleton CRUD application in
+The L<instantcrudstylish.pl> executable creates a skeleton CRUD application in
 current directory. 
 
 =head1 DESCRIPTION
@@ -71,7 +72,7 @@ jquery for js
 
 Download the Catalyst-Example-InstantCRUDStylish-0.0xx.tar.gz from CPAN. 
 Decompress that file and inside it, there is a .rar on the root.
-Then, use this instantcrud to create your application dirs, and after that
+Then, use this instantcrudstylish to create your application dirs, and after that
 replace your app root dir with the 'root dir' inside .rar file.
 
 
@@ -94,7 +95,7 @@ See Makefile.PL
 
 =head1 RESOURCES
 
-L<http://dev.catalyst.perl.org/wiki/crud/instantcrud> - InstantCRUDStylish page at 
+L<http://dev.catalyst.perl.org/wiki/crud/instantcrudstylish> - InstantCRUDStylish page at 
 the Catalyst wiki.
 
 =head1 BUGS AND LIMITATIONS
@@ -113,7 +114,7 @@ to fool them, second there is no API for creation of the main
 application module (My::App).
 
 Please report any bugs or feature requests to
-C<bug-catalyst-example-instantcrud@rt.cpan.org>, or through the web interface at
+C<bug-catalyst-example-instantcrudstylish@rt.cpan.org>, or through the web interface at
 L<http://rt.cpan.org>.
 
 
